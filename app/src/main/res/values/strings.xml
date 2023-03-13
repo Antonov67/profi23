@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">profi23</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="zastavka_fragment">zastavka fragment</string>
+    <string name="propupusk_text">Пропустить</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
