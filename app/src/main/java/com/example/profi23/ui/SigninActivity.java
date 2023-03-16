@@ -36,6 +36,7 @@ public class SigninActivity extends AppCompatActivity {
 
         email = findViewById(R.id.editText_signin);
         nextButton = findViewById(R.id.button_next);
+
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,6 +63,8 @@ public class SigninActivity extends AppCompatActivity {
                             Log.d("777",t.getMessage());
                         }
                     });
+                }else {
+                    Toast.makeText(SigninActivity.this, "неправильная почта", Toast.LENGTH_SHORT).show();
                 }
             }
         });
