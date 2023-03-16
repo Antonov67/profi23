@@ -2,6 +2,7 @@ package com.example.profi23.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.profi23.CodeFromEmailActivity;
 import com.example.profi23.R;
 import com.example.profi23.model.APIservice;
 import com.example.profi23.model.EmailCode;
@@ -50,6 +52,8 @@ public class SigninActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(Call<EmailCode> call, Response<EmailCode> response) {
                             Toast.makeText(SigninActivity.this, response.body().message, Toast.LENGTH_SHORT).show();
+                            //Если код успешно отправлен, то переходим на активити для ввода кода
+                            startActivity(new Intent(SigninActivity.this, CodeFromEmailActivity.class));
                         }
 
                         @Override
