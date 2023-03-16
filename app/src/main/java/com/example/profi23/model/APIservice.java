@@ -9,4 +9,7 @@ public interface APIservice {
 
     @POST("/api/sendCode")
     Call <EmailCode> sendEmailCode(@Header("email") String email);
+
+    @POST("/api/signin")
+    Call <TokenClass> checkEmailCode(@Header("email") String email, @Header("code") String code);
 }

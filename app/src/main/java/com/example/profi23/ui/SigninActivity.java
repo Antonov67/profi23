@@ -13,13 +13,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.profi23.CodeFromEmailActivity;
 import com.example.profi23.R;
 import com.example.profi23.model.APIservice;
 import com.example.profi23.model.EmailCode;
 import com.example.profi23.model.RetrofitConnection;
-
-import java.util.concurrent.Semaphore;
+import com.example.profi23.model.Utils;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,7 +42,9 @@ public class SigninActivity extends AppCompatActivity {
                 //проверка корректности почты на шаблон и на то, что все символы маленькие
                 if (isEmailValid(email.getText().toString()) && email.getText().toString().toLowerCase().equals(email.getText().toString())){
                     Toast.makeText(SigninActivity.this, "email correct", Toast.LENGTH_SHORT).show();
-
+                    //запишем адрес почты для дальнейшего использования
+                    Utils.email = "";
+                    Utils.email = email.getText().toString();
                     //отправим запрос на почту для получения кода
                     APIservice apIservice = RetrofitConnection.getInstance().getRetrofit().create(APIservice.class);
                     Call<EmailCode> call = apIservice.sendEmailCode(email.getText().toString());
