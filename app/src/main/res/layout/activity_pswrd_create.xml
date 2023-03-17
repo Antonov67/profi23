@@ -151,7 +151,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/image_pswrd_length"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -159,7 +159,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:srcCompat="@drawable/progress" />
+        app:srcCompat="@drawable/progress0" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_1"
@@ -174,7 +174,7 @@
         app:layout_constraintEnd_toStartOf="@+id/button_2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/image_pswrd_length" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_2"
@@ -189,7 +189,7 @@
         app:layout_constraintEnd_toStartOf="@+id/button_3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_1"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/image_pswrd_length" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_3"
@@ -204,7 +204,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/image_pswrd_length" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_del"
@@ -214,8 +214,10 @@
         android:background="@drawable/del_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.546"
         app:layout_constraintStart_toEndOf="@+id/button_0"
-        app:layout_constraintTop_toBottomOf="@+id/button_9" />
+        app:layout_constraintTop_toBottomOf="@+id/button_9"
+        app:layout_constraintVertical_bias="0.431" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
