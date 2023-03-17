@@ -13,5 +13,6 @@ public class AnalizMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_analiz_main);
         getSupportActionBar().hide();
+
     }
 }

@@ -6,4 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".ui.AnalizMainActivity">
 
+    <EditText
+        android:id="@+id/editText_name2"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edit_text_corner_round"
+        android:ems="10"
+        android:fontFamily="@font/lato"
+        android:hint="   Искать анализы"
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        android:textColor="#7E7E9A"
+        android:textSize="22sp"
+
+
+        android:drawableLeft="@drawable/lupa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="145dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
