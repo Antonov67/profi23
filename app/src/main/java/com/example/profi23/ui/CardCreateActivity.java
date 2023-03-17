@@ -70,7 +70,7 @@ public class CardCreateActivity extends AppCompatActivity {
 
                 //сделаем запрос к серверу для добавления пользователя
                 APIservice apIservice = RetrofitConnection.getInstance().getRetrofit().create(APIservice.class);
-                Call<ResponseServer> call = apIservice.createProfile(Utils.token, profile);
+                Call<ResponseServer> call = apIservice.createProfile("Bearer " + Utils.token, profile);
                 call.enqueue(new Callback<ResponseServer>() {
                     @Override
                     public void onResponse(Call<ResponseServer> call, Response<ResponseServer> response) {
