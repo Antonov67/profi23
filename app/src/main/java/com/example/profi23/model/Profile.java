@@ -8,24 +8,46 @@ public class Profile {
 
     @SerializedName("id")
     @Expose
-    public Integer id;
+    private Integer id;
     @SerializedName("firstname")
     @Expose
-    public String firstname;
+    private String firstname;
     @SerializedName("lastname")
     @Expose
-    public String lastname;
+    private String lastname;
     @SerializedName("middlename")
     @Expose
-    public String middlename;
+    private String middlename;
     @SerializedName("bith")
     @Expose
-    public String bith;
+    private String bith;
     @SerializedName("pol")
     @Expose
-    public String pol;
+    private String pol;
     @SerializedName("image")
     @Expose
-    public String image;
+    private String image;
 
+    public Profile(Integer id, String firstname, String lastname, String middlename, String bith, String pol, String image) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.middlename = middlename;
+        this.bith = bith;
+        this.pol = pol;
+        this.image = image;
+    }
+
+    @Override
+    public String toString() {
+        return "Profile{" +
+                "id=" + id +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", middlename='" + middlename + '\'' +
+                ", bith='" + bith + '\'' +
+                ", pol='" + pol + '\'' +
+                ", image='" + image + '\'' +
+                '}';
+    }
 }
