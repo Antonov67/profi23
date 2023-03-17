@@ -82,7 +82,7 @@ public class PswrdCreateActivity extends AppCompatActivity {
         if (isPswrdCreate){
             startActivity(new Intent(PswrdCreateActivity.this, CardCreateActivity.class));
         }
-
+        //если нажали на кнопку пропустить, то окно ввода пароля откроется еще раз при следующем запуске приложения
         skipCreatePswrd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,8 +108,8 @@ public class PswrdCreateActivity extends AppCompatActivity {
                 //добавление цифры после нажатия в пароль
                 pswrd += num;
                 Log.d("777", pswrd);
-                //контролируем длину пароля в 4 символа, как только пароль этой длины будет введен,
-                //то сразу открываем активити для создания мед карты.
+                //контролируем длину пароля в 4 символа, как только пароль этой длины будет введен
+
                 if (pswrd.length() < 4){
                     updateImg(pswrd.length());
                 }else if (pswrd.length() == 4) {
@@ -119,7 +119,7 @@ public class PswrdCreateActivity extends AppCompatActivity {
                     editor.putBoolean(APP_PREFERENCES_PSWRD_STATUS, true);
                     editor.putString(APP_PREFERENCES_PSWRD_VALUE, pswrd);
                     editor.commit();
-
+                    //открываем активити для создания мед карты.
                     startActivity(new Intent(PswrdCreateActivity.this, CardCreateActivity.class));
                 }
 
