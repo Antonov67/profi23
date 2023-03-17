@@ -6,50 +6,177 @@
     android:layout_height="match_parent"
     tools:context=".ui.CardCreateActivity">
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_create"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="#C9D4FB"
+        android:fontFamily="@font/lato"
+        android:text="Создать"
+        android:textAllCaps="false"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        app:layout_constraintVertical_bias="0.037" />
+
     <TextView
         android:id="@+id/skip_create_card"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="72dp"
         android:fontFamily="@font/lato"
         android:text="@string/propupusk_text"
         android:textColor="#1A6FEE"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.917"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.873"
+        app:layout_constraintStart_toEndOf="@+id/textView10"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="52dp"
         android:text="Создание карты\n пациента"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="55dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/lato"
         android:text="Без карты пациента вы не сможете заказать анализы."
         android:textColor="#939396"
         android:textSize="15sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="140dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/lato"
         android:text="В картах пациентов будут храниться результаты\n анализов вас и ваших близких."
         android:textColor="#939396"
         android:textSize="15sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="168dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.263"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <EditText
+        android:id="@+id/editText_name"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edit_text_corner_round"
+        android:ems="10"
+        android:fontFamily="@font/lato"
+        android:hint="Имя"
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        android:textColor="#7E7E9A"
+        android:textSize="15sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <EditText
+        android:id="@+id/editText_middle_name"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edit_text_corner_round"
+        android:ems="10"
+        android:fontFamily="@font/lato"
+        android:hint="Oтчество"
+        android:inputType="textPersonName"
+
+        android:padding="15dp"
+        android:textColor="#7E7E9A"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_name" />
+
+    <EditText
+        android:id="@+id/editText_surname"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edit_text_corner_round"
+        android:ems="10"
+        android:fontFamily="@font/lato"
+        android:hint="Фамилия"
+        android:inputType="textPersonName"
+
+        android:padding="15dp"
+        android:textColor="#7E7E9A"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_middle_name" />
+
+    <EditText
+        android:id="@+id/editText_birthday"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edit_text_corner_round"
+        android:ems="10"
+        android:fontFamily="@font/lato"
+        android:hint="Дата рождения"
+        android:inputType="textPersonName"
+
+        android:padding="15dp"
+        android:textColor="#7E7E9A"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_surname" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edit_text_corner_round"
+        android:ems="10"
+        android:fontFamily="@font/lato"
+        android:hint="Дата рождения"
+        android:inputType="textPersonName"
+
+        android:padding="10dp"
+        android:textColor="#7E7E9A"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_birthday" />
 </androidx.constraintlayout.widget.ConstraintLayout>
