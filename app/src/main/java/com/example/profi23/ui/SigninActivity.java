@@ -37,6 +37,17 @@ public class SigninActivity extends AppCompatActivity {
         email = findViewById(R.id.editText_signin);
         nextButton = findViewById(R.id.button_next);
 
+        //установим цвет и доступность для нажатия кнопки
+        if (email.getText().toString().length() == 0){
+            int color = Color.parseColor("#C9D4FB");
+            nextButton.setBackgroundColor(color);
+            nextButton.setClickable(false);
+        }else {
+            int color = Color.parseColor("#1A6FEE");
+            nextButton.setBackgroundColor(color);
+            nextButton.setClickable(true);
+        }
+
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,9 +95,11 @@ public class SigninActivity extends AppCompatActivity {
                 if (editable.length() == 0){
                     int color = Color.parseColor("#C9D4FB");
                     nextButton.setBackgroundColor(color);
+                    nextButton.setClickable(false);
                 }else {
                     int color = Color.parseColor("#1A6FEE");
                     nextButton.setBackgroundColor(color);
+                    nextButton.setClickable(true);
                 }
             }
         });
