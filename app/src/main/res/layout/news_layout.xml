@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
         <ImageView
             android:id="@+id/image_news"
             android:layout_gravity="right"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:src="@drawable/illustration"
             android:background="#CDE3FF"/>
@@ -36,7 +36,7 @@
                 android:layout_marginTop="16dp"
                 android:text="Чек-ап для мужчин"
                 android:textColor="@color/white"
-                android:textSize="28sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -46,7 +46,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
                 android:textColor="@color/white"
-                android:textSize="22sp"
+                android:textSize="16sp"
                 android:textStyle="normal"
                 android:text="9 исследований" />
 
@@ -57,7 +57,7 @@
                 android:layout_marginLeft="16dp"
 
                 android:textColor="@color/white"
-                android:textSize="28sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:text="8000 + \u20BD" />
         </LinearLayout>

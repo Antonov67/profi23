@@ -59,7 +59,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.OnboardingView
         void setOnboardingData(News news) {
             textZagolovok.setText(news.name);
             textOpisanie.setText(news.description);
-            textPrice.setText(news.price + '\u20BD');
+            textPrice.setText(news.price + " " + '\u20BD');
             //здесь нужна библиотека Picasso для загрузки картинки по url в наш imageView
             Picasso.get().load(news.image).into(image);
         }
