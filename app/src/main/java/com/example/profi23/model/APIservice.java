@@ -22,4 +22,8 @@ public interface APIservice {
     //создание карты пациента по токену
     @POST("/api/createProfile")
     Call<ResponseServer> createProfile(@Header("Authorization") String token, @Body Profile profile);
+
+    //получение новочсте от сервера
+    @GET("api/news")
+    Call<List<News>> getNews();
 }

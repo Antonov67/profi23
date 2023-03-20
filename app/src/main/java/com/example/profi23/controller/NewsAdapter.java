@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.profi23.R;
 import com.example.profi23.model.News;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -42,21 +43,25 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.OnboardingView
     }
 
     class OnboardingViewHolder extends RecyclerView.ViewHolder {
-        private TextView textTitle;
-        private TextView textDescription;
-        private ImageView imageOnboarding;
+        private TextView textZagolovok;
+        private TextView textOpisanie;
+        private TextView textPrice;
+        private ImageView image;
 
         OnboardingViewHolder(@NonNull View itemView) {
             super(itemView);
-            textTitle = itemView.findViewById(R.id.textTitle);
-            textDescription = itemView.findViewById(R.id.textDescription);
-            imageOnboarding = itemView.findViewById(R.id.imageOnboarding);
+            textZagolovok = itemView.findViewById(R.id.text_zagolovok);
+            textOpisanie = itemView.findViewById(R.id.text_opisanie);
+            textPrice = itemView.findViewById(R.id.text_price);
+            image = itemView.findViewById(R.id.image_news);
         }
 
-        void setOnboardingData(OnboardingItem onboardingItem) {
-            textTitle.setText(onboardingItem.getTitle());
-            textDescription.setText(onboardingItem.getDescription());
-            imageOnboarding.setImageResource(onboardingItem.getImage());
+        void setOnboardingData(News news) {
+            textZagolovok.setText(news.name);
+            textOpisanie.setText(news.description);
+            textPrice.setText(news.price + '\u20BD');
+            //здесь нужна библиотека Picasso для загрузки картинки по url в наш imageView
+            Picasso.get().load(news.image).into(image);
         }
     }
 }
