@@ -27,7 +27,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.OnboardingView
     public OnboardingViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new OnboardingViewHolder(
                 LayoutInflater.from(parent.getContext()).inflate(
-                        R.layout.news_layout, parent, false
+                        R.layout.news_layout2, parent, false
                 )
         );
     }

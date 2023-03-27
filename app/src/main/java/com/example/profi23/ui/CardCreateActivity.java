@@ -90,6 +90,7 @@ public class CardCreateActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<ResponseServer> call, Response<ResponseServer> response) {
                         Toast.makeText(CardCreateActivity.this, response.body().toString(), Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(CardCreateActivity.this, AnalizMainActivity.class));
                     }
 
                     @Override

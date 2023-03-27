@@ -23,7 +23,7 @@ public interface APIservice {
     @POST("/api/createProfile")
     Call<ResponseServer> createProfile(@Header("Authorization") String token, @Body Profile profile);
 
-    //получение новочсте от сервера
+    //получение новостей от сервера
     @GET("api/news")
     Call<List<News>> getNews();
 }
