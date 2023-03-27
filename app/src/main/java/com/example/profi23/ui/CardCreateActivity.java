@@ -64,7 +64,7 @@ public class CardCreateActivity extends AppCompatActivity {
         skipCardCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(CardCreateActivity.this, AnalizMainActivity.class));
+                startActivity(new Intent(CardCreateActivity.this, AnalizesActivity.class));
             }
         });
 
@@ -90,7 +90,7 @@ public class CardCreateActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<ResponseServer> call, Response<ResponseServer> response) {
                         Toast.makeText(CardCreateActivity.this, response.body().toString(), Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(CardCreateActivity.this, AnalizMainActivity.class));
+                        startActivity(new Intent(CardCreateActivity.this, AnalizesActivity.class));
                     }
 
                     @Override

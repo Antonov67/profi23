@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.AnalizMainActivity">
+    tools:context=".ui.home.AnalizFragment">
 
     <EditText
-        android:id="@+id/editText_name2"
+        android:id="@+id/editText_name2_fr"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginLeft="20dp"
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/textView13_fr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -38,11 +38,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.057"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_name2" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_name2_fr" />
 
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/view_pager_news"
+        android:id="@+id/view_pager_news_fr"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_margin="20dp"
@@ -51,10 +51,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@+id/textView13_fr" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/textView14_fr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -66,7 +66,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.075"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_pager_news"
+        app:layout_constraintTop_toBottomOf="@+id/view_pager_news_fr"
         app:layout_constraintVertical_bias="0.0" />
 
 
