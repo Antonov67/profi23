@@ -26,4 +26,8 @@ public interface APIservice {
     //получение новостей от сервера
     @GET("api/news")
     Call<List<News>> getNews();
+
+    //получение списка товаров от сервера
+    @GET("api/catalog")
+    Call<List<Product>> getProducts();
 }

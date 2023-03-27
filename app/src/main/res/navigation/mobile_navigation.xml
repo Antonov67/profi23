@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/navigation_analizes"
-        android:name="com.example.profi23.ui.home.AnalizFragment"
+        android:name="com.example.profi23.ui.analiz.AnalizFragment"
         android:label="@string/title_analizes"
         tools:layout="@layout/fragment_analiz" />
 
