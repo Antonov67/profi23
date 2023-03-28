@@ -20,6 +20,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.profi23.R;
+import com.example.profi23.controller.AnalizArrayAdapter;
 import com.example.profi23.controller.NewsAdapter;
 import com.example.profi23.databinding.FragmentAnalizBinding;
 import com.example.profi23.model.News;
@@ -81,6 +82,11 @@ public class AnalizFragment extends Fragment {
                     ll.addView(myButton, lp);
                 }
 
+                //разместим вертикальный список анализов на экран
+                ListView listView = root.findViewById(R.id.analiz_lstview);
+                AnalizArrayAdapter analizArrayAdapter = new AnalizArrayAdapter(getContext(),R.layout.analiz_product_card,products);
+                listView.setAdapter(analizArrayAdapter);
+
             }
         });
 
@@ -94,11 +100,7 @@ public class AnalizFragment extends Fragment {
             }
         });
 
-        //разместим вертикальный список анализов на экран
-        ListView listView = root.findViewById(R.id.analiz_lstview);
-        String[] strings = {"dewf", "fwefw", "fwefw", "fwefw", "fwefw", "fwefw", "fwefw", "fwefw", "fwefw"};
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1,strings);
-        listView.setAdapter(arrayAdapter);
+
 
         return root;
     }
