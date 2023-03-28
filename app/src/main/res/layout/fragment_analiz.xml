@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.analiz.AnalizFragment">
 
     <EditText
@@ -11,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="52dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/edit_text_corner_round"
         android:drawableLeft="@drawable/lupa"
@@ -21,10 +21,7 @@
         android:inputType="textPersonName"
         android:padding="15dp"
         android:textColor="#7E7E9A"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="22sp" />
 
     <TextView
         android:id="@+id/textView13_fr"
@@ -32,26 +29,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/lato"
+        android:layout_marginLeft="25dp"
         android:text="Акции и новости"
         android:textColor="#939396"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_name2_fr" />
+        android:textSize="17sp" />
 
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager_news_fr"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="200dp"
         android:layout_margin="20dp"
 
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13_fr" />
+        android:layout_marginTop="24dp" />
 
     <TextView
         android:id="@+id/textView14_fr"
@@ -59,23 +49,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/lato"
+        android:layout_marginLeft="25dp"
         android:text="Каталог анализов"
         android:textColor="#939396"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.06"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_pager_news_fr" />
+        android:textSize="17sp" />
 
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14_fr">
+        android:layout_margin="20dp">
 
         <LinearLayout
             android:id="@+id/product_buttons"
@@ -84,5 +66,11 @@
             android:orientation="horizontal" />
     </HorizontalScrollView>
 
+    <ListView
+        android:id="@+id/analiz_lstview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

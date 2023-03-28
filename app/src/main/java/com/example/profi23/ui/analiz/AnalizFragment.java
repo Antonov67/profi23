@@ -6,10 +6,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -31,6 +35,12 @@ public class AnalizFragment extends Fragment {
 
     private FragmentAnalizBinding binding;
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -40,6 +50,7 @@ public class AnalizFragment extends Fragment {
 
         binding = FragmentAnalizBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
 
         ViewPager2 viewPagerNews = root.findViewById(R.id.view_pager_news_fr);
 
@@ -73,6 +84,7 @@ public class AnalizFragment extends Fragment {
             }
         });
 
+       //получим новости от сервера и добавим их на экран
         analizViewModel.getNews().observe(getViewLifecycleOwner(), new Observer<List<News>>() {
             @Override
             public void onChanged(List<News> news) {
@@ -81,6 +93,13 @@ public class AnalizFragment extends Fragment {
 
             }
         });
+
+        //разместим вертикальный список анализов на экран
+        ListView listView = root.findViewById(R.id.analiz_lstview);
+        String[] strings = {"dewf", "fwefw", "fwefw", "fwefw", "fwefw", "fwefw", "fwefw", "fwefw", "fwefw"};
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1,strings);
+        listView.setAdapter(arrayAdapter);
+
         return root;
     }
 
