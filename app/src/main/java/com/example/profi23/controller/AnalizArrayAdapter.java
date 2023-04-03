@@ -21,13 +21,14 @@ import java.util.List;
 
 public class AnalizArrayAdapter extends ArrayAdapter<Product> {
 
+    //адаптер для вывода списка продуктов на экран
+
     private List<Product> products;
     private Context context;
 
 
     public AnalizArrayAdapter(Context context, int resource, @NonNull List<Product> products) {
         super(context, resource, products);
-        products = new ArrayList<>();
         this.products = products;
         this.context = context;
     }

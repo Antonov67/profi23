@@ -3,6 +3,8 @@ package com.example.profi23.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Objects;
+
 public class Product {
 
     @SerializedName("id")
@@ -29,5 +31,10 @@ public class Product {
     @SerializedName("bio")
     @Expose
     public String bio;
+
+    @Override
+    public String toString() {
+        return "id=" + id + ", category=" + category + "\n";
+    }
 
 }

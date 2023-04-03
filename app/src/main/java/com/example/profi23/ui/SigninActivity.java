@@ -60,6 +60,8 @@ public class SigninActivity extends AppCompatActivity {
                     //отправим запрос на почту для получения кода
                     APIservice apIservice = RetrofitConnection.getInstance().getRetrofit().create(APIservice.class);
                     Call<EmailCode> call = apIservice.sendEmailCode(email.getText().toString());
+
+
                     call.enqueue(new Callback<EmailCode>() {
                         @Override
                         public void onResponse(Call<EmailCode> call, Response<EmailCode> response) {

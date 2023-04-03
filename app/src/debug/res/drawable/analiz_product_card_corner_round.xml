@@ -5,6 +5,7 @@
     android:padding="10dp">
 
     <solid android:color="#FFFFFF" />
+    <stroke android:color="#F4F4F4"/>
     <corners
         android:bottomRightRadius="10dp"
         android:bottomLeftRadius="10dp"

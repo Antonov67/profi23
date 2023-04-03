@@ -9,7 +9,9 @@ import com.example.profi23.model.News;
 import com.example.profi23.model.Product;
 import com.example.profi23.model.RetrofitConnection;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -21,10 +23,12 @@ public class AnalizViewModel extends ViewModel {
 
     private final MutableLiveData<List<News>> newsList;
     private final MutableLiveData<List<Product>> productList;
+    private final  MutableLiveData<HashSet<String>> categorySet;
 
     public AnalizViewModel() {
         newsList = new MutableLiveData<>();
         productList = new MutableLiveData<>();
+        categorySet= new MutableLiveData<>();
         APIservice apIservice = RetrofitConnection.getInstance().getRetrofit().create(APIservice.class);
         //список новостей
         Call<List<News>> call = apIservice.getNews();
@@ -44,7 +48,14 @@ public class AnalizViewModel extends ViewModel {
         call2.enqueue(new Callback<List<Product>>() {
             @Override
             public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
+                //получим все товары
                 productList.postValue(response.body());
+                //выберем только категории без дублей
+                HashSet<String> tmpList = new HashSet<>();
+                for (Product pr : response.body()) {
+                    tmpList.add(pr.category);
+                }
+                categorySet.postValue(tmpList);
             }
 
             @Override
@@ -61,5 +72,10 @@ public class AnalizViewModel extends ViewModel {
 
     public LiveData<List<Product>> getProducts() {
         return productList;
+    }
+
+    //метод возврата категорий товаров
+    public LiveData<HashSet<String>> getCategories(){
+        return categorySet;
     }
 }
