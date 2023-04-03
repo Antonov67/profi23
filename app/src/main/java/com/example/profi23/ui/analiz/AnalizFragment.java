@@ -81,6 +81,9 @@ public class AnalizFragment extends Fragment {
                         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                         lp.setMargins(10,10,10,10 );
 
+                        //создадим список кнопок, чтобы менять их цвет в зависмости от выбранной категории
+                        List<MyMaterialButton> buttonList = new ArrayList<>();
+
                         for (String str : category) {
                             myButton = new MyMaterialButton(getContext());
                             myButton.setText(str);
@@ -88,6 +91,8 @@ public class AnalizFragment extends Fragment {
                             myButton.setCornerRadius(10);
                             myButton.category = str;
                             myButton.setTextColor(Color.parseColor("#FFFFFF"));
+                            myButton.setBackgroundColor(Color.parseColor("#1A6FEE"));
+                            buttonList.add(myButton); // добавим кнопку в список
                             myButton.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
@@ -106,6 +111,18 @@ public class AnalizFragment extends Fragment {
                                     }
                                     Log.d("777", productList.toString());
                                     analizArrayAdapter.notifyDataSetChanged();
+
+                                    //поменяем цвета кнопок
+                                    for (MyMaterialButton mButton: buttonList) {
+                                        if (!mButton.category.equals(categoryToSet)){
+                                            mButton.setTextColor(Color.parseColor("#7E7E9A"));
+                                            mButton.setBackgroundColor(Color.parseColor("#F5F5F9"));
+                                        }
+                                        else {
+                                            mButton.setTextColor(Color.parseColor("#FFFFFF"));
+                                            mButton.setBackgroundColor(Color.parseColor("#1A6FEE"));
+                                        }
+                                    }
 
                                 }
                             });
