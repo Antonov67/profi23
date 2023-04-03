@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -62,6 +63,8 @@ public class AnalizFragment extends Fragment {
         binding = FragmentAnalizBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+
+
         //разместим вертикальный список анализов на экран
         ListView listView = root.findViewById(R.id.analiz_listview);
         listView.setDivider(null); // уберем разделитель
@@ -69,6 +72,22 @@ public class AnalizFragment extends Fragment {
 
 
         ViewPager2 viewPagerNews = root.findViewById(R.id.view_pager_news_fr);
+
+        //свайп для скрытия/показа новостей
+        root.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    viewPagerNews.setVisibility(View.VISIBLE);
+                    root.findViewById(R.id.textView13_fr).setVisibility(View.VISIBLE);
+                }
+                if (motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    viewPagerNews.setVisibility(View.GONE);
+                    root.findViewById(R.id.textView13_fr).setVisibility(View.GONE);
+                }
+                return true;
+            }
+        });
 
         //создадим кнопки товаров динамически
         analizViewModel.getCategories().observe(getViewLifecycleOwner(), new Observer<Set<String>>() {
