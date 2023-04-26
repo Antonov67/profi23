@@ -13,12 +13,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.profi23.R;
@@ -44,6 +46,7 @@ public class AnalizFragment extends Fragment {
     AnalizArrayAdapter analizArrayAdapter;
     List<Product> productList = new ArrayList<>(); // товары по категориям
     List<Product> allProductList = new ArrayList<>(); // здесь сохраним товары по категориям
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -72,22 +75,36 @@ public class AnalizFragment extends Fragment {
 
 
         ViewPager2 viewPagerNews = root.findViewById(R.id.view_pager_news_fr);
+        TextView textView = root.findViewById(R.id.textView13_fr);
 
         //свайп для скрытия/показа новостей
-        root.setOnTouchListener(new View.OnTouchListener() {
+
+        //получим новости от сервера и добавим их на экран
+        analizViewModel.getNews().observe(getViewLifecycleOwner(), new Observer<List<News>>() {
             @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN){
-                    viewPagerNews.setVisibility(View.VISIBLE);
-                    root.findViewById(R.id.textView13_fr).setVisibility(View.VISIBLE);
-                }
-                if (motionEvent.getAction() == MotionEvent.ACTION_UP){
-                    viewPagerNews.setVisibility(View.GONE);
-                    root.findViewById(R.id.textView13_fr).setVisibility(View.GONE);
-                }
-                return true;
+            public void onChanged(List<News> news) {
+                NewsAdapter newsAdapter = new NewsAdapter(news);
+                viewPagerNews.setAdapter(newsAdapter);
+
             }
         });
+//        SwipeRefreshLayout swipeRefreshLayout = root.findViewById(R.id.swipe_refresh);
+//        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//            @Override
+//            public void onRefresh() {
+//
+//
+//
+//                swipeRefreshLayout.setRefreshing(false);
+//
+//
+//
+//            }
+//        });
+
+
+
+
 
         //создадим кнопки товаров динамически
         analizViewModel.getCategories().observe(getViewLifecycleOwner(), new Observer<Set<String>>() {
@@ -165,15 +182,7 @@ public class AnalizFragment extends Fragment {
             }
         });
 
-        //получим новости от сервера и добавим их на экран
-        analizViewModel.getNews().observe(getViewLifecycleOwner(), new Observer<List<News>>() {
-            @Override
-            public void onChanged(List<News> news) {
-                NewsAdapter newsAdapter = new NewsAdapter(news);
-                viewPagerNews.setAdapter(newsAdapter);
 
-            }
-        });
 
         return root;
     }
